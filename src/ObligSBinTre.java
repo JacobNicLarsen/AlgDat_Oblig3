@@ -1,6 +1,16 @@
+import java.util.Comparator;
 import java.util.Iterator;
 
-public class ObligSBinTre<T> implements Beholder<T> {
+public class ObligSBinTre<T> implements Beholder<T>{
+
+    private int endringer;
+    private int antall;
+
+    ObligSBinTre(Comparator<? super T> e){
+        endringer = 0;
+        antall = 0;
+
+    }
 
 
     @Override
@@ -20,12 +30,12 @@ public class ObligSBinTre<T> implements Beholder<T> {
 
     @Override
     public int antall() {
-        return 0;
+        return antall;
     }
 
     @Override
     public boolean tom() {
-        return false;
+        return antall == 0;
     }
 
     @Override
