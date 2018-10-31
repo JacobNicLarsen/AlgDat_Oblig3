@@ -170,7 +170,9 @@ public class ObligSBinTre<T> implements Beholder<T>{
     }
 
     public String omvendtString(){
-        return "Hei";
+        StringJoiner s = new StringJoiner(", ", "[", "]");
+        if (!tom()) inorden(x -> s.add(x != null ? x.toString():"Null"));
+        return s.toString();
     }
 
     public void inorden(Consumer<? super T> oppgave)  // iterativ inorden
@@ -179,22 +181,22 @@ public class ObligSBinTre<T> implements Beholder<T>{
 
         Deque<Node<T>> stakk = new ArrayDeque<>();
         Node<T> p = rot;   // starter i roten og går til venstre
-        for ( ; p.venstre != null; p = p.venstre) stakk.add(p);
+        for ( ; p.høyre != null; p = p.høyre) stakk.add(p);
 
         while (true)
         {
             oppgave.accept(p.verdi);      // oppgaven utføres
 
-            if (p.høyre != null)          // til venstre i høyre subtre
+            if (p.venstre != null)          // til venstre i høyre subtre
             {
-                for (p = p.høyre; p.venstre != null; p = p.venstre)
+                for (p = p.venstre; p.høyre != null; p = p.høyre)
                 {
                     stakk.add(p);
                 }
             }
             else if (!stakk.isEmpty())
             {
-                p = stakk.pop();   // p.høyre == null, henter fra stakken
+                p = stakk.removeLast();   // p.høyre == null, henter fra stakken
             }
             else break;          // stakken er tom - vi er ferdig
 
