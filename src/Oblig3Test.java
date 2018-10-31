@@ -17,6 +17,7 @@ import java.util.*;
 
 public class Oblig3Test
 {
+    /*
     public static void main(String[] args)
     {
         int antallFeil = 0;
@@ -48,7 +49,7 @@ public class Oblig3Test
 
     public static int oppgave1()
     {
-        int antallFeil = 0;
+        int antallFeil = 02;
         ObligSBinTre<Integer> tre =
                 new ObligSBinTre<>(Comparator.naturalOrder());
 
@@ -1114,5 +1115,5 @@ public class Oblig3Test
 
     }  // slutt på Oppgave 10
 
-
+*/
 } // Oblig3Test

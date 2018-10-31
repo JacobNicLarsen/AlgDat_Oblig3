@@ -97,27 +97,54 @@ public class ObligSBinTre<T> implements Beholder<T>{
         }
         if (p == null) return false;
 
-        if (p.venstre  == null || p.høyre == null){ // om noden har null eller et barn
+
+        if (p.venstre == null && p.høyre == null){
+            System.out.println("If ble triggerd fordi p er en bladnode med verdi: " + p.verdi + " og venstre og høyre " + p.venstre + " " + p.høyre + ", foreldernoden er " + q.verdi);
+            if (p == rot){
+                rot = null;
+                System.out.print("Jeg en en snik som blir kjørt");
+            }
+            else if (q.høyre == p){
+                q.høyre = q.venstre;
+                p.forelder = null;
+                System.out.println( "q nye verdi " + q.verdi);
+            }
+            else if (q.venstre == p){
+                q.venstre = q.høyre;
+                p.forelder = null;
+            }
+        }
+
+        else if (p.venstre  == null || p.høyre == null){ // om noden har null eller et barn
+            System.out.print("Else if triggerd, p verdi: " + p.verdi + ",");
             Node<T> b = p.venstre != null ? p.venstre : p.høyre;
             if (p == rot) rot = b;
             else if (p == q.venstre){
+                System.out.println(" Med venstre barn " + p.venstre.verdi);
                 q.venstre = b;
                 b.forelder = q;
             }
             else {
+                System.out.print(" Med høyre barn " + p.høyre.verdi);
                 q.høyre = b;
                 b.forelder = q;
+                System.out.println(" b sin forelder er nå " + b.forelder.verdi + " og q sin høyre er " + q.høyre.verdi);
             }
         }
         else{ // om noen har 2 barn
+            System.out.println("Else trigged fordi p: " + p.verdi + "  har to barn " + p.venstre.verdi + " " + p.høyre.verdi);
             Node<T> r = nesteInorden(p), s = r.forelder, b = nesteInorden(r);
 
             p.verdi = r.verdi;
+
             if (s != p){
+                //System.out.println("Forelder til inorden: " + s.verdi + " " + " Node verdi: " + p.verdi + " " + " Neste inorden: " + r.verdi);
+                //System.out.println("r sin høyre og venste verdi " + " r.høyre: " + r.høyre + " r.venstre " + r.venstre);
                 s.venstre = r.høyre;
-                b.forelder = s;
+
             }
             else {
+                System.out.println(" + else ble triggerd");
                 s.høyre = r.høyre;
                 b.forelder = s;
             }
@@ -131,7 +158,6 @@ public class ObligSBinTre<T> implements Beholder<T>{
         while (inneholder(verdi)){
             fjern(verdi);
             antallFjernet++;
-            System.out.println("Fjerener " + verdi);
         }
         return antallFjernet;
     }
