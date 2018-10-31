@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fd1aa8b-b682-43d8-ab15-bbe8dbe0ba2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Oblig3Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oblig3Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ObligSBinTre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObligSBinTre.java" afterDir="false" />
@@ -36,34 +35,56 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2426" />
+          <entry key="java" value="3697" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2426" />
+          <entry key="JAVA" value="3697" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="83" selection-start-line="9" selection-start-column="83" selection-end-line="9" selection-end-column="83" />
+            <state relative-caret-position="204">
+              <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ObligSBinTre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="172" column="45" selection-start-line="172" selection-start-column="45" selection-end-line="172" selection-end-column="45" />
+            <state relative-caret-position="434">
+              <caret line="120" column="16" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3875#3876#0" expanded="true" />
+                <element signature="e#3904#3905#0" expanded="true" />
+                <element signature="e#4317#4318#0" expanded="true" />
+                <element signature="e#4351#4352#0" expanded="true" />
+                <element signature="e#4396#4397#0" expanded="true" />
+                <element signature="e#4471#4472#0" expanded="true" />
+                <element signature="e#4522#4523#0" expanded="true" />
+                <element signature="e#4567#4568#0" expanded="true" />
+                <element signature="e#6533#6534#0" expanded="true" />
+                <element signature="e#6608#6609#0" expanded="true" />
+                <element signature="e#6640#6641#0" expanded="true" />
+                <element signature="e#6715#6716#0" expanded="true" />
+                <element signature="e#6745#6746#0" expanded="true" />
+                <element signature="e#6820#6821#0" expanded="true" />
+                <element signature="e#6960#6961#0" expanded="true" />
+                <element signature="e#7035#7036#0" expanded="true" />
+                <element signature="e#6490#6491#0" expanded="true" />
+                <element signature="e#6573#6574#0" expanded="true" />
+                <element signature="e#6644#6645#0" expanded="true" />
+                <element signature="e#6712#6713#0" expanded="true" />
+                <element signature="e#6764#6765#0" expanded="true" />
+                <element signature="e#6855#6856#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,8 +93,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Oblig3Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="258" column="13" selection-start-line="258" selection-start-column="13" selection-end-line="258" selection-end-column="13" />
+            <state relative-caret-position="221">
+              <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -99,6 +120,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>4c</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -106,9 +132,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Beholder.java" />
+        <option value="$PROJECT_DIR$/src/Oblig3Test.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/ObligSBinTre.java" />
-        <option value="$PROJECT_DIR$/src/Oblig3Test.java" />
       </list>
     </option>
   </component>
@@ -154,7 +180,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540987291170" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540997147625" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -173,7 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Oblig3Test">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="AlgDat_Oblig3" />
@@ -194,8 +220,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Oblig3Test" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Oblig3Test" />
       </list>
     </recent_temporary>
   </component>
@@ -211,12 +237,12 @@
       <updated>1540849515705</updated>
       <workItem from="1540849518622" duration="3452000" />
       <workItem from="1540892823619" duration="16616000" />
-      <workItem from="1540986266988" duration="1097000" />
+      <workItem from="1540986266988" duration="7535000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21165000" />
+    <option name="totallyTimeSpent" value="27603000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -269,27 +295,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ObligSBinTre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="172" column="45" selection-start-line="172" selection-start-column="45" selection-end-line="172" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Oblig3Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="258" column="13" selection-start-line="258" selection-start-column="13" selection-end-line="258" selection-end-column="13" />
+        <state relative-caret-position="221">
+          <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="83" selection-start-line="9" selection-start-column="83" selection-end-line="9" selection-end-column="83" />
+        <state relative-caret-position="204">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ObligSBinTre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="120" column="16" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3875#3876#0" expanded="true" />
+            <element signature="e#3904#3905#0" expanded="true" />
+            <element signature="e#4317#4318#0" expanded="true" />
+            <element signature="e#4351#4352#0" expanded="true" />
+            <element signature="e#4396#4397#0" expanded="true" />
+            <element signature="e#4471#4472#0" expanded="true" />
+            <element signature="e#4522#4523#0" expanded="true" />
+            <element signature="e#4567#4568#0" expanded="true" />
+            <element signature="e#6533#6534#0" expanded="true" />
+            <element signature="e#6608#6609#0" expanded="true" />
+            <element signature="e#6640#6641#0" expanded="true" />
+            <element signature="e#6715#6716#0" expanded="true" />
+            <element signature="e#6745#6746#0" expanded="true" />
+            <element signature="e#6820#6821#0" expanded="true" />
+            <element signature="e#6960#6961#0" expanded="true" />
+            <element signature="e#7035#7036#0" expanded="true" />
+            <element signature="e#6490#6491#0" expanded="true" />
+            <element signature="e#6573#6574#0" expanded="true" />
+            <element signature="e#6644#6645#0" expanded="true" />
+            <element signature="e#6712#6713#0" expanded="true" />
+            <element signature="e#6764#6765#0" expanded="true" />
+            <element signature="e#6855#6856#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

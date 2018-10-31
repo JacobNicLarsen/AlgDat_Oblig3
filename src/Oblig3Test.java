@@ -25,7 +25,7 @@ public class Oblig3Test
     antallFeil += oppgave2();
     antallFeil += oppgave3();
     antallFeil += oppgave4();
-    //antallFeil += oppgave5();
+    antallFeil += oppgave5();
     //antallFeil += oppgave6();
     //antallFeil += oppgave7();
     //antallFeil += oppgave8();
@@ -268,7 +268,7 @@ public class Oblig3Test
 
     }  // slutt på Oppgave 4
 
-/*
+
     // OPPGAVE 5 ////////////////////////////////////////////////
 
     public static int oppgave5()
@@ -1113,6 +1113,6 @@ public class Oblig3Test
         return antallFeil;
 
     }  // slutt på Oppgave 10
-    */
+
 
 } // Oblig3Test

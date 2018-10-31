@@ -30,7 +30,6 @@ public class ObligSBinTre<T> implements Beholder<T>{
 
     ObligSBinTre(Comparator<? super T> c){
         rot = null;
-        endringer = 0;
         antall = 0;
         comp = c;
     }
@@ -86,7 +85,55 @@ public class ObligSBinTre<T> implements Beholder<T>{
 
     @Override
     public boolean fjern(T verdi) {
-        return false;
+        if (verdi == null) return false; // Treet har ingen nullverdier
+
+        Node<T> p = rot, q = null; // q er forelder til p og j er barn til p;
+
+        while (p != null){ // finner første forekomst av verdi og forelder noden
+            int cmp = comp.compare(verdi, p.verdi);
+            if (cmp < 0) {q = p; p = p.venstre;}
+            else if (cmp > 0) {q = p; p = p.høyre;}
+            else break;
+        }
+        if (p == null) return false;
+
+        if (p.venstre  == null || p.høyre == null){ // om noden har null eller et barn
+            Node<T> b = p.venstre != null ? p.venstre : p.høyre;
+            if (p == rot) rot = b;
+            else if (p == q.venstre){
+                q.venstre = b;
+                b.forelder = q;
+            }
+            else {
+                q.høyre = b;
+                b.forelder = q;
+            }
+        }
+        else{ // om noen har 2 barn
+            Node<T> r = nesteInorden(p), s = r.forelder, b = nesteInorden(r);
+
+            p.verdi = r.verdi;
+            if (s != p){
+                s.venstre = r.høyre;
+                b.forelder = s;
+            }
+            else {
+                s.høyre = r.høyre;
+                b.forelder = s;
+            }
+        }
+        antall--;
+        return true;
+    }
+
+    public int fjernAlle(T verdi){
+        int antallFjernet = 0;
+        while (inneholder(verdi)){
+            fjern(verdi);
+            antallFjernet++;
+            System.out.println("Fjerener " + verdi);
+        }
+        return antallFjernet;
     }
 
     @Override
@@ -118,12 +165,12 @@ public class ObligSBinTre<T> implements Beholder<T>{
 
     @Override
     public void nullstill() {
-
+        throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
     @Override
     public Iterator<T> iterator() {
-        return null;
+        return new BladnodeIterator();
     }
 
     private static <T> Node<T> nesteInorden(Node<T> p){
@@ -201,6 +248,64 @@ public class ObligSBinTre<T> implements Beholder<T>{
             else break;          // stakken er tom - vi er ferdig
 
         } // while
+    }
+
+    public String høyreGren(){
+        throw new UnsupportedOperationException("Ikke kodet ennå!");
+    }
+    public String lengstGren(){
+        throw new UnsupportedOperationException("Ikke kodet ennå!");
+    }
+    public String[] grener(){
+        throw new UnsupportedOperationException("Ikke kodet ennå!");
+    }
+    public String bladnodeverdier(){
+        throw new UnsupportedOperationException("Ikke kodet ennå!");
+    } public String postString(){
+        throw new UnsupportedOperationException("Ikke kodet ennå!");
+    }
+
+
+    private class BladnodeIterator implements Iterator<T> {
+        private Node<T> p = rot, q = null;
+        private boolean removeOK = false;
+        private int iteratorendringer = endringer;
+
+        private BladnodeIterator() {
+            throw new UnsupportedOperationException("Ikke kodet ennå!");
+        }
+
+        @Override
+        public boolean hasNext() {
+            return p != null;  // Denne skal ikke endres!
+        }
+        @Override
+        public T next(){
+            throw new UnsupportedOperationException("Ikke kodet ennå!");
+        }
+
+        @Override
+                        public void remove(){
+            throw new UnsupportedOperationException("Ikke kodet ennå!");
+        } // BladnodeIterator
+    }
+
+    public void nivåorden(Consumer<? super T> oppgave)                // skal ligge i class BinTre
+    {
+        if (tom()) return;                   // tomt tre
+
+        Queue<Node<T>> kø = new ArrayDeque<>();   // Se Avsnitt 4.2.2
+        kø.add(rot);                     // legger inn roten
+
+        while (!kø.isEmpty())                    // så lenge som køen ikke er tom
+        {
+            Node<T> p = kø.remove();             // tar ut fra køen
+            oppgave.accept(p.verdi);
+
+            if (p.venstre != null) kø.add(p.venstre);
+            if (p.høyre != null) kø.add(p.høyre);
+
+        }
     }
 
 }
