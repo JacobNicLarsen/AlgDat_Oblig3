@@ -1,5 +1,3 @@
-import com.sun.istack.internal.NotNull;
-
 import java.util.*;
 import java.util.function.Consumer;
 
@@ -127,17 +125,15 @@ public class ObligSBinTre<T> implements Beholder<T>{
             }
         }
         else{ // om noen har 2 barn
-            Node<T> r = nesteInorden(p), s = r.forelder, b = nesteInorden(r);
+
+            Node<T> r = nesteInorden(p), s = r.forelder, b = r.høyre;
 
             p.verdi = r.verdi;
 
             if (s != p){
-
                 s.venstre = r.høyre;
-
             }
             else {
-
                 s.høyre = r.høyre;
                 b.forelder = s;
             }
@@ -286,14 +282,123 @@ public class ObligSBinTre<T> implements Beholder<T>{
     }
 
     public String høyreGren(){
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        if (tom()) return "[]";
+        StringJoiner s = new StringJoiner(", ", "[", "]");
+        Node<T> p = rot;
+
+        while (true){
+            if (p.høyre == null && p.venstre == null) {
+                s.add(p.verdi.toString());
+                break;
+            }
+            else if (p.høyre != null){
+                s.add(p.verdi.toString());
+                p = p.høyre;
+            }
+            else {
+                s.add(p.verdi.toString());
+                p = p.venstre;
+            }
+        }
+
+        return s.toString();
     }
+
+
     public String lengstGren(){
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+        if (tom()) return "[]";
+        java.util.Deque<Node<T>> nodes = new java.util.ArrayDeque<Node<T>>();
+
+        nodes.addFirst(rot);
+        int høyde = høyde();
+        int nivåteller = 0;
+
+        while (høyde != nivåteller) {
+            //Hent ut størrelsen på køen => dette er antall noder på dette nivået
+            int antall = nodes.size();
+            nivåteller++;
+
+            //Skriv ut alle noder på dette nivået, og legg noder for neste nivå til køen
+            for (int i=0; i<antall; ++i) {
+                Node<T> current = nodes.removeLast();
+                if (current.høyre != null) {
+                    nodes.addFirst(current.høyre);
+                }
+                if (current.venstre != null) {
+                    nodes.addFirst(current.venstre);
+                }
+            }
+
+        }
+
+        java.util.Deque<T> ut = new java.util.ArrayDeque<T>();
+        Node<T> p = nodes.getFirst();
+        while (p != null){
+            ut.addFirst(p.verdi);
+            p = p.forelder;
+        }
+
+        StringJoiner s = new StringJoiner(", ","[","]");
+
+        while (!ut.isEmpty()){
+
+            s.add(ut.pop().toString());
+        }
+
+        return s.toString();
     }
+
+
+
+    private static void høyde(Node<?> p, int nivå, int[] maksnivå)
+    {
+        if (nivå > maksnivå[0]) maksnivå[0] = nivå;
+        if (p.venstre != null) høyde(p.venstre, nivå + 1, maksnivå);
+        if (p.høyre != null) høyde(p.høyre, nivå + 1, maksnivå);
+    }
+
+    public int høyde()
+    {
+        int[] maksnivå = {-1};                // tabellen har lengde 1
+        if (!tom()) høyde(rot, 0, maksnivå);  // roten har nivå 0
+        return maksnivå[0];                   // inneholder høyden
+    }
+
+
+
+
+
+
     public String[] grener(){
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
+
+
+
+    public void printPaths(Node<T> r,ArrayList<T> arr, ArrayList<T> ut)
+    {
+        if(r==null)
+        {
+            return;
+        }
+        arr.add(r.verdi);
+        if(r.venstre==null && r.høyre==null)
+        {
+            ut.addAll(arr);
+        }
+        else
+        {
+            printPaths(r.venstre,arr, ut);
+            printPaths(r.høyre,arr, ut);
+        }
+
+        arr.remove(arr.size()-1);
+    }
+
+
+
+
     public String bladnodeverdier(){
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     } public String postString(){
@@ -340,6 +445,34 @@ public class ObligSBinTre<T> implements Beholder<T>{
             if (p.venstre != null) kø.add(p.venstre);
             if (p.høyre != null) kø.add(p.høyre);
 
+        }
+    }
+
+    /**
+     * Funksjon som skiver ut bredde først, men med linjeskift mellom nivåer
+     */
+    void printBTBreadthFirstNewline() {
+        java.util.Deque<Node<T>> nodes = new java.util.ArrayDeque<Node<T>>();
+
+        nodes.addFirst(rot);
+
+        while (!nodes.isEmpty()) {
+            //Hent ut størrelsen på køen => dette er antall noder på dette nivået
+            int antall = nodes.size();
+            System.out.println("Antall noder dette nivå: " + antall);
+
+            //Skriv ut alle noder på dette nivået, og legg noder for neste nivå til køen
+            for (int i=0; i<antall; ++i) {
+                Node<T> current = nodes.removeLast();
+                System.out.print(current.verdi + ", ");
+                if (current.venstre != null) {
+                    nodes.addFirst(current.venstre);
+                }
+                if (current.høyre != null) {
+                    nodes.addFirst(current.høyre);
+                }
+            }
+            System.out.println();
         }
     }
 
