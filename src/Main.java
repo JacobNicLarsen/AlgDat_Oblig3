@@ -10,10 +10,16 @@ public class Main {
         String s;
         ObligSBinTre<Integer> tre = new ObligSBinTre<>(Comparator.naturalOrder());
         int[] i = {6, 3, 9, 1, 5, 7, 10, 6, 8, 11, 8};
-        for (Integer e : i) tre.leggInn(e);
+        //for (Integer e : i) tre.leggInn(e);
 
 
+        tre.leggInn(10);
+        tre.fjern(10);
 
+        System.out.println(tre.toString());
+
+
+/*
         tre.fjern(6);
         System.out.println(tre);
         System.out.println(tre.omvendtString());
@@ -23,9 +29,13 @@ public class Main {
         tre.fjern(10);
         System.out.println(tre);
         System.out.println(tre.omvendtString());
+        tre.nivåorden(x->System.out.print(x + ", "));
+        System.out.println();
         tre.fjern(11);
         System.out.println(tre);
         System.out.println(tre.omvendtString());
+        tre.nivåorden(x->System.out.print(x + ", "));
+        System.out.println();
         tre.fjern(8);
         System.out.println(tre);
         System.out.println(tre.omvendtString());
@@ -38,16 +48,16 @@ public class Main {
         System.out.println(tre.antall());
 
 
-
+*/
         int antallFeil = 0;
 
-         //antallFeil += oppgave5();
+        antallFeil += oppgave5();
         //antallFeil += oppgave6();
         //antallFeil += oppgave7();
         //antallFeil += oppgave8();
         //antallFeil += oppgave9();
         //antallFeil += oppgave10();
-/*
+
         if (antallFeil == 0)
         {
             System.out.println("Gratulerer!! Du passerte testen!");
@@ -56,7 +66,7 @@ public class Main {
         {
             System.out.println
                     ("\nDette må forbedres. Du har minst " + antallFeil + " feil!");
-        }*/
+        }
     }
 
     public static int oppgave5() {
@@ -164,7 +174,7 @@ public class Main {
             antallFeil++;
             System.out.println("Oppgave 5k: Feil i fjern(T)!");
         }
-/*
+
         tre.fjern(1); tre.fjern(3); tre.fjern(5); tre.fjern(9);
 
         s = tre.toString();
@@ -174,7 +184,7 @@ public class Main {
             antallFeil++;
             System.out.println("Oppgave 5l: Feil i fjern(T)!");
         }
-
+/*
         tre.nullstill();
 
         if (tre.antall() != 0)
